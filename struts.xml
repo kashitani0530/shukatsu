@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.ui.theme" value="simple" />
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.multipart.maxSize" value="-1" />
+	<package name="com.internousdev.glanq.action" extends="struts-default">
+
+
+		<!-- 1.ユーザー登録機能 -->
+		<action name="CreateUserAction" class="com.internousdev.glanq.action.CreateUserAction"
+			method="execute">
+			<result name="success">createUser.jsp</result>
+			<result name="error">home.jsp</result>
+			<result name="admin">admin.jsp</result>
+		</action>
+		<action name="CreateUserConfirmAction"
+			class="com.internousdev.glanq.action.CreateUserConfirmAction" method="execute">
+			<result name="success">createUserConfirm.jsp</result>
+			<result name="error">createUser.jsp</result>
+			<result name="admin">admin.jsp</result>
+		</action>
+		<action name="CreateUserCompleteAction"
+			class="com.internousdev.glanq.action.CreateUserCompleteAction"
+			method="execute">
+			<result name="success">createUserComplete.jsp</result>
+			<result name="error">createUser.jsp></result>
+			<result name="admin">admin.jsp</result>
+		</action>
+
+
+
+		<!-- 2.ログイン認証機能 -->
+		<action name="GoLoginAction" class="com.internousdev.glanq.action.GoLoginAction"
+			method="execute">
+			<result name="success">login.jsp</result>
+			<result name="error">home.jsp</result>
+			<result name="admin">admin.jsp</result>
+		</action>
+		<action name="LoginAction" class="com.internousdev.glanq.action.LoginAction"
+			method="execute">
+			<result name="success">home.jsp</result>
+			<result name="locationOption">locationOption.jsp</result>
+			<result name="cart">update_cart.html</result>
+			<result name="error">login.jsp</result>
+			<result name="admin">admin.jsp</result>
+		</action>
+
+
+		<!-- 3.パスワード再設定機能 -->
+		<action name="ResetPasswordAction"
+			class="com.internousdev.glanq.action.ResetPasswordAction" method="execute">
+			<result name="success">resetPassword.jsp</result>
+			<result name="error">login.jsp</result>
+			<result name="admin">admin.jsp</result>
+		</action>
+		<action name="ResetPasswordConfirmAction"
+			class="com.internousdev.glanq.action.ResetPasswordConfirmAction"
+			method="execute">
+			<result name="success">resetPasswordConfirm.jsp</result>
+			<result name="error">resetPassword.jsp</result>
+			<result name="admin">admin.jsp</result>
+		</action>
+		<action name="ResetPasswordCompleteAction"
+			class="com.internousdev.glanq.action.ResetPasswordCompleteAction"
+			method="execute">
+			<result name="success">resetPasswordComplete.jsp</result>
+			<result name="error">resetPassword.jsp</result>
+			<result name="admin">admin.jsp</result>
+		</action>
+
+
+		<!-- 4.1.商品一覧機能 -->
+		<action name="ProductListAction" class="com.internousdev.glanq.action.ProductListAction"
+			method="execute">
+			<result name="success">productList.jsp</result>
+			<result name="error">home.jsp</result>
+			<result name="admin">admin.jsp</result>
+		</action>
+		<!-- 4.2.商品詳細機能 -->
+		<action name="ProductDetailsAction"
+			class="com.internousdev.glanq.action.ProductDetailsAction" method="execute">
+			<result name="success">productDetails.jsp</result>
+			<result name="error">productList.jsp</result>
+			<result name="admin">error.html</result>
+
+		</action>
+
+
+		<!-- 5.商品検索機能 -->
+		<action name="HomeAction" class="com.internousdev.glanq.action.HomeAction"
+			method="execute">
+			<result name="success">home.jsp</result>
+			<result name="admin">admin.jsp</result>
+		</action>
+		<action name="SearchItemAction" class="com.internousdev.glanq.action.SearchItemAction"
+			method="execute">
+			<result name="success">productList.jsp</result>
+			<result name="error">home.jsp</result>
+			<result name="admin">error.html</result>
+			<result name="admin">admin.jsp</result>
+		</action>
+
+
+		<!-- 6.カート機能 -->
+		<action name="CartAction" class="com.internousdev.glanq.action.CartAction"
+			method="execute">
+			<result name="success">cart.jsp</result>
+			<result name="error">home.jsp</result>
+			<result name="admin">admin.jsp</result>
+		</action>
+		<action name="AddCartAction" class="com.internousdev.glanq.action.AddCartAction"
+			method="execute">
+			<result name="success">cart.jsp</result>
+			<result name="error">home.jsp</result>
+			<result name="input">cart.jsp</result>
+		</action>
+		<action name="DeleteCartAction" class="com.internousdev.glanq.action.DeleteCartAction"
+			method="execute">
+			<result name="success">cart.jsp</result>
+			<result name="error">cart.jsp</result>
+			<result name="admin">admin.jsp</result>
+		</action>
+
+
+		<!-- 7.宛先情報選択機能 -->
+		<action name="SettlementConfirmAction"
+			class="com.internousdev.glanq.action.SettlementConfirmAction" method="execute">
+			<result name="success">settlementConfirm.jsp</result>
+			<result name="error">login.jsp</result>
+			<result name="admin">admin.jsp</result>
+		</action>
+
+
+		<!-- 8.宛先情報登録機能 -->
+		<action name="CreateDestinationAction"
+			class="com.internousdev.glanq.action.CreateDestinationAction" method="execute">
+			<result name="success">createDestination.jsp</result>
+			<result name="error">home.jsp</result>
+			<result name="admin">admin.jsp</result>
+		</action>
+		<action name="CreateDestinationConfirmAction"
+			class="com.internousdev.glanq.action.CreateDestinationConfirmAction"
+			method="execute">
+			<result name="success">createDestinationConfirm.jsp</result>
+			<result name="error">createDestination.jsp</result>
+			<result name="admin">admin.jsp</result>
+		</action>
+		<action name="CreateDestinationCompleteAction"
+			class="com.internousdev.glanq.action.CreateDestinationCompleteAction"
+			method="execute">
+			<result name="success">createDestinationComplete.jsp</result>
+			<result name="error">createDestination.jsp</result>
+			<result name="admin">admin.jsp</result>
+		</action>
+
+
+		<!-- 9.決済完了機能 -->
+		<action name="SettlementCompleteAction"
+			class="com.internousdev.glanq.action.SettlementCompleteAction"
+			method="execute">
+			<result name="success">settlementComplete.jsp</result>
+			<result name="error">error.html</result>
+			<result name="admin">admin.jsp</result>
+		</action>
+
+
+		<!-- 10.マイページ機能 -->
+		<action name="MyPageAction" class="com.internousdev.glanq.action.MyPageAction"
+			method="execute">
+			<result name="success">mypage.jsp</result>
+			<result name="error">home.jsp</result>
+			<result name="admin">admin.jsp</result>
+		</action>
+
+
+		<!-- 11.商品購入履歴機能 -->
+		<action name="PurchaseHistoryAction"
+			class="com.internousdev.glanq.action.PurchaseHistoryAction" method="execute">
+			<result name="success">purchaseHistory.jsp</result>
+			<result name="admin">admin.jsp</result>
+		</action>
+		<action name="DeletePurchaseHistoryAction"
+			class="com.internousdev.glanq.action.DeletePurchaseHistoryAction"
+			method="execute">
+			<result name="success">purchaseHistory.jsp</result>
+			<result name="error">home.jsp</result>
+			<result name="admin">admin.jsp</result>
+		</action>
+
+
+		<!-- 12.ログアウト機能 -->
+		<action name="LogoutAction" class="com.internousdev.glanq.action.LogoutAction"
+			method="execute">
+			<result name="success">index.html</result>
+			<result name="error">index.html</result>
+		</action>
+
+
+		<!-- 13.管理者機能 -->
+		<!-- 13.1.管理者ホーム移動機能 -->
+		<action name="GoAdminAction" class="com.internousdev.glanq.action.GoAdminAction"
+			method="execute">
+			<result name="success">admin.jsp</result>
+			<result name="error">home.jsp</result>
+			<result name="errorhome">error.html</result>
+		</action>
+		<!-- 13.2.管理者商品追加機能 -->
+		<action name="AdminRegistAction" class="com.internousdev.glanq.action.AdminRegistAction"
+			method="execute">
+			<result name="success">adminRegist.jsp</result>
+			<result name="error">admin.jsp</result>
+			<result name="errorhome">error.html</result>
+		</action>
+		<action name="AdminRegistConfirmAction"
+			class="com.internousdev.glanq.action.AdminRegistConfirmAction"
+			method="execute">
+			<result name="success">adminRegistConfirm.jsp</result>
+			<result name="error">adminRegist.jsp</result>
+			<result name="errorhome">error.html</result>
+		</action>
+		<action name="AdminRegistCompleteAction"
+			class="com.internousdev.glanq.action.AdminRegistCompleteAction"
+			method="execute">
+			<result name="success">adminRegistComplete.jsp</result>
+			<result name="error">adminRegistConfirm.jsp</result>
+			<result name="errorhome">error.html</result>
+		</action>
+		<!-- 13.3.管理者商品変更・編集機能 -->
+		<action name="AdminEditAction" class="com.internousdev.glanq.action.AdminEditAction"
+			method="execute">
+			<result name="success">adminEdit.jsp</result>
+			<result name="error">admin.jsp</result>
+			<result name="errorhome">error.html</result>
+		</action>
+		<action name="AdminEditDetailsAction"
+			class="com.internousdev.glanq.action.AdminEditDetailsAction" method="execute">
+			<result name="success">adminEditDetails.jsp</result>
+			<result name="error">admin.jsp</result>
+			<result name="errorhome">error.html</result>
+		</action>
+		<action name="AdminEditDetailsConfirmAction"
+			class="com.internousdev.glanq.action.AdminEditDetailsConfirmAction"
+			method="execute">
+			<result name="success">adminEditDetailsConfirm.jsp</result>
+			<result name="error">adminEditDetails.jsp</result>
+			<result name="errorhome">error.html</result>
+		</action>
+		<action name="AdminEditDetailsCompleteAction"
+			class="com.internousdev.glanq.action.AdminEditDetailsCompleteAction"
+			method="execute">
+			<result name="success">adminEditDetailsComplete.jsp</result>
+			<result name="error">adminEditDetailsConfirm.jsp</result>
+			<result name="errorhome">error.html</result>
+		</action>
+		<!-- 13.4.管理者商品削除機能 -->
+		<action name="AdminDeleteAction" class="com.internousdev.glanq.action.AdminDeleteAction"
+			method="execute">
+			<result name="success">adminDelete.jsp</result>
+			<result name="error">admin.jsp</result>
+			<result name="errorhome">error.html</result>
+		</action>
+		<action name="AdminDeleteCompleteAction"
+			class="com.internousdev.glanq.action.AdminDeleteCompleteAction"
+			method="execute">
+			<result name="success">adminDeleteComplete.jsp</result>
+			<result name="error">adminDelete.jsp</result>
+			<result name="errorhome">error.html</result>
+		</action>
+		<!-- 13.5.管理者商品一覧機能 -->
+		<action name="AdminProductSelectAction"
+			class="com.internousdev.glanq.action.AdminProductSelectAction"
+			method="execute">
+			<result name="success">adminProductSelect.jsp</result>
+			<result name="error">admin.jsp</result>
+			<result name="errorhome">error.html</result>
+		</action>
+		<!-- 13.6.管理者購入履歴一覧機能 -->
+		<action name="AdminPurchaseSelectAction"
+			class="com.internousdev.glanq.action.AdminPurchaseSelectAction"
+			method="execute">
+			<result name="success">adminPurchaseSelect.jsp</result>
+			<result name="error">admin.jsp</result>
+			<result name="errorhome">error.html</result>
+		</action>
+		<!-- 13.7.管理者データ確認画面 -->
+		<action name="AdminAllSelectAction"
+			class="com.internousdev.glanq.action.AdminAllSelectAction" method="execute">
+			<result name="success">adminAllSelect.jsp</result>
+			<result name="error">admin.jsp</result>
+			<result name="errorhome">error.html</result>
+		</action>
+
+
+		<!-- 14.新機能 -->
+		<action name="LocationOptionAction"
+			class="com.internousdev.glanq.action.LocationOptionAction" method="execute">
+			<result name="success">locationOption.jsp</result>
+			<result name="error">login.jsp</result>
+			<result name="admin">admin.jsp</result>
+		</action>
+		<action name="LocationChoiceAction"
+			class="com.internousdev.glanq.action.LocationChoiceAction" method="execute">
+			<result name="success">locationChoice.jsp</result>
+			<result name="error">login.jsp</result>
+			<result name="admin">admin.jsp</result>
+		</action>
+		<action name="LocationChoiceConfirmAction"
+			class="com.internousdev.glanq.action.LocationChoiceConfirmAction"
+			method="execute">
+			<result name="success">locationChoiceConfirm.jsp</result>
+			<result name="error">login.jsp</result>
+			<result name="admin">admin.jsp</result>
+		</action>
+
+		<action name="TimeoutAction" class="com.internousdev.glanq.action.TimeoutAction"
+			method="execute">
+			<result name="success">timeout.jsp</result>
+		</action>
+
+	</package>
+</struts>
